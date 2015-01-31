@@ -1,2 +1,2 @@
 # MyWordpressTeema
-My　Wordpress Teema
+私が使っているwordpressのテーマです。
