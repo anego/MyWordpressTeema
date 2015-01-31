@@ -1,16 +1,17 @@
 CACHE MANIFEST
 
-#version 1.0 12-12-2014
+#version 1.2 31-01-2015
 
 CACHE:
-
-
 /wp-content/themes/ProjectLIFE/css/lightbox.css
 /wp-content/themes/ProjectLIFE/images/bg_suburb.jpg
 /wp-content/themes/ProjectLIFE/images/close.png
 /wp-content/themes/ProjectLIFE/images/loading.gif
 /wp-content/themes/ProjectLIFE/images/next.png
 /wp-content/themes/ProjectLIFE/images/prev.png
+/wp-content/themes/ProjectLIFE/images/logo.svg
+/wp-content/themes/ProjectLIFE/images/dot3.svg
+/wp-content/themes/ProjectLIFE/images/dot5.svg
 /wp-content/themes/ProjectLIFE/js/bootstrap.min.js
 /wp-content/themes/ProjectLIFE/js/canvas.js
 /wp-content/themes/ProjectLIFE/js/lightbox.min.js

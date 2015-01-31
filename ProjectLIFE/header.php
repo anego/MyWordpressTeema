@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" manifest="<?php bloginfo('template_url'); ?>/main.manifest">
+<html lang="ja" manifest="<?php bloginfo('template_url'); ?>/main.appcache">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <?php if ( $post->my_description ): //meta descriptionの設定 ?>
