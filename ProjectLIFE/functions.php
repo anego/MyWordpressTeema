@@ -35,6 +35,8 @@ add_action ( 'widgets_init', create_function ( '', 'return register_widget("BSWi
 add_action ( 'widgets_init', create_function ( '', 'return register_widget("BSWidgetArchive");' ) );
 add_action ( 'widgets_init', create_function ( '', 'return register_widget("BSWidgetTagCloud");' ) );
 
+
+
 /**
  * ページャー.
  * @param string $pages
@@ -125,3 +127,19 @@ remove_action('wp_head', 'wp_generator');
 add_theme_support('automatic-feed-links');
 // コメントフィールドは削除
 remove_action('wp_head', 'feed_links_extra', 3);
+
+// スクリプトとスタイルシートの管理
+// wp-config/theme/[子テーマ名]/functions.php
+function projectlife_styles() {
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), null, 'all');
+	wp_enqueue_style( 'projectlife-style', get_stylesheet_uri());
+}
+add_action( 'wp_enqueue_scripts', 'projectlife_styles');
+
+// wp-config/theme/[子テーマ名]/functions.php
+function projectlife_scripts() {
+	wp_enqueue_script( 'projectlife-script', get_template_directory_uri() . '/js/functions.js', array(), '20150314', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), false, true );
+}
+add_action( 'wp_enqueue_scripts', 'projectlife_scripts');
+

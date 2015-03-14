@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 				<div class="column col-sm-3" id="sidebar">
 					<a class="logo" href="<?php echo home_url(); ?>">
-						<!--
-						<canvas id="logo"></canvas>
-						 -->
 					</a>
 					<div class="blog-header">
 						<h5 class="blog-title">
