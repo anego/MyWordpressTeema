@@ -1,5 +1,25 @@
 <?php
 
+/**
+ * ユーザープロフィールの項目のカスタマイズ
+ */
+function my_user_meta($x)
+{
+	//項目の削除
+	/*
+	unset($x['aim']);
+	unset($x['jabber']);
+	unset($x['yim']);*/
+
+	//項目の追加
+	$x['twitter'] = 'twitter';
+	$x['facebook'] = 'facebook';
+	$x['github'] = 'github';
+	$x['pixiv'] = 'pixiv';
+
+	return $x;
+}
+add_filter('user_contactmethods', 'my_user_meta', 10, 1);
 
 /**
  * ページャー.

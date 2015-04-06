@@ -18,10 +18,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-	<?php while (have_posts()) : the_post(); ?>
-	<?php the_content(); ?>
-	<?php endwhile; ?>
+	<?php if (have_posts()) : ?>
+		<?php while (have_posts()) : the_post(); ?>
+		<?php the_content(); ?>
+		<?php endwhile; ?>
+	<?php else : ?>
+		<h2 class="title">記事が見つかりませんでした。</h2>
+		<?php get_search_form(); ?>
+	<?php endif; ?>
 
 				<!-- Pager -->
 				<ul class="pager">
