@@ -21,6 +21,9 @@ function my_user_meta($x)
 }
 add_filter('user_contactmethods', 'my_user_meta', 10, 1);
 
+/** メニューのカスタマイズ */
+register_nav_menu('mainmenu', 'Main menu');
+
 /**
  * ページャー.
  * @param string $pages
