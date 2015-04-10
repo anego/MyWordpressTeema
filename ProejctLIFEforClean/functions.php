@@ -49,12 +49,12 @@ function pagination($pages = '', $range = 2)
 
 	if(1 != $pages)//全ページが１でない場合はページネーションを表示する
 	{
-		echo "<ul class=\"pagination\">\n";
+		echo "<ul class=\" text-center pager\">\n";
 		//Prev：現在のページ値が１より大きい場合は表示
 		if($paged > 1){
 			echo "<li class=\"prev\"><a href='".get_pagenum_link($paged - 1)."'>Prev</a></li>\n";
 		}else {
-			echo "<li class=\"disabled\"><a href=\"#\">Prev<span class=\"sr-only\">(current)</span></a></li>\n";
+			echo "<li class=\"prev disabled\"><a href=\"#\">Prev<span class=\"sr-only\">(current)</span></a></li>\n";
 		}
 
 		for ($i=1; $i <= $pages; $i++)
@@ -69,7 +69,7 @@ function pagination($pages = '', $range = 2)
 		if ($paged < $pages){
 			echo "<li class=\"next\"><a href=\"".get_pagenum_link($paged + 1)."\">Next</a></li>\n";
 		}else {
-			echo "<li class=\"disabled\"><a href=\"#\">Next<span class=\"sr-only\">(current)</span></a></li>\n";
+			echo "<li class=\"next disabled\"><a href=\"#\">Next<span class=\"sr-only\">(current)</span></a></li>\n";
 		}
 		echo "</ul>\n";
 	}

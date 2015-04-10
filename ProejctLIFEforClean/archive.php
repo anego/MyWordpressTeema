@@ -5,9 +5,9 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="site-heading">
-						<h1><?php the_title(); ?></h1>
+						<h1><?php bloginfo('name'); ?></h1>
 						<hr class="small">
-						<span class="subheading"><?php bloginfo('name'); ?></span>
+						<span class="subheading"><?php bloginfo('description'); ?></span>
 					</div>
 				</div>
 			</div>
@@ -18,15 +18,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<?php
-				while ( have_posts() ) : the_post();
-					get_template_part( 'content', 'page' );
-
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				endwhile;
-				?>
+				<?php get_template_part( 'loop' ); ?>
+				<!-- Pager -->
+				<ul class="pager">
+					<?php
+					if (function_exists("pagination")) {
+						pagination($additional_loop->max_num_pages);
+					}
+					?>
+				</ul>
 			</div>
 		</div>
 	</div>

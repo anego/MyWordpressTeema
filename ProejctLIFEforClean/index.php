@@ -20,13 +20,11 @@
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 				<?php get_template_part( 'loop' ); ?>
 				<!-- Pager -->
-				<ul class="pager">
-					<?php
-					if (function_exists("pagination")) {
-						pagination($additional_loop->max_num_pages);
-					}
-					?>
-				</ul>
+				<?php
+				if (function_exists("pagination")) {
+					pagination($additional_loop->max_num_pages);
+				}
+				?>
 			</div>
 		</div>
 	</div>

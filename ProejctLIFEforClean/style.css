@@ -409,3 +409,13 @@ body {
 .site-heading h1 {
 	font-family:'Audiowide',cursive;
 }
+.post-navigation {
+	width :100%;
+	text-align: center;
+}
+.nav-previous, .nav-next {
+	display: inline-block;
+}
+.pager .next > a, .pager .next > span {
+	float: none;
+}
