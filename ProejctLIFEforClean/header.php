@@ -78,6 +78,7 @@
 				);
 				wp_nav_menu($args);
 			?>
+
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container -->

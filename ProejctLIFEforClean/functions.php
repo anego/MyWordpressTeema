@@ -24,6 +24,44 @@ add_filter('user_contactmethods', 'my_user_meta', 10, 1);
 /** メニューのカスタマイズ */
 register_nav_menu('mainmenu', 'Main menu');
 
+/** ウィジット */
+if (function_exists ( 'register_sidebar' ))
+	register_sidebar ( array (
+			'name' => 'sidebar',
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '<h2 class="widget_title">',
+			'after_title' => '</h2>'
+	) );
+register_sidebar ( array (
+	'name' => 'footer',
+	'before_widget' => '<div id="%1$s" class="col-sm-4">',
+	'after_widget' => '</div>',
+	'before_title' => '<div class="page-header text-muted divider">',
+	'after_title' => '</div>'
+) );
+
+// 分割したファイル読み込み
+$custom_functions_dir = 'functions/';
+$custom_functions_files = array(
+		// カテゴリーウィジェット用
+		$custom_functions_dir . 'category-template',
+		// アーカイブウィジェット用
+		$custom_functions_dir . 'archive-template',
+		// タグクラウドウィジェット用
+		$custom_functions_dir. 'tagcloud-template'
+);
+foreach ($custom_functions_files as $custom_functions_file) {
+	get_template_part($custom_functions_file);
+}
+
+
+// 管理画面にウィジェットの追加
+add_action ( 'widgets_init', create_function ( '', 'return register_widget("BSWidgetCategory");' ) );
+add_action ( 'widgets_init', create_function ( '', 'return register_widget("BSWidgetArchive");' ) );
+add_action ( 'widgets_init', create_function ( '', 'return register_widget("BSWidgetTagCloud");' ) );
+
+
 /**
  * ページャー.
  * @param string $pages
@@ -95,7 +133,8 @@ add_action( 'wp_enqueue_scripts', 'projectlife_styles');
 
 // wp-config/theme/[子テーマ名]/functions.php
 function projectlife_scripts() {
-	wp_enqueue_script( 'projectlife-script', get_template_directory_uri() . '/js/clean-blog.min.js', array(), '20150314', true );
+	wp_enqueue_script( 'projectlife-clean-script', get_template_directory_uri() . '/js/clean-blog.min.js', array(), '20150314', true );
+	wp_enqueue_script( 'projectlife-script', get_template_directory_uri() . '/js/functions.js', array(), '20150314', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'projectlife_scripts');

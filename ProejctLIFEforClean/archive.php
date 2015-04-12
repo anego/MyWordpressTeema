@@ -5,9 +5,9 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="site-heading">
-						<h1><?php bloginfo('name'); ?></h1>
+						<?php the_archive_title( '<h1>', '</h1>' ); ?>
 						<hr class="small">
-						<span class="subheading"><?php bloginfo('description'); ?></span>
+						<?php the_archive_description( '<span class="subheading">', '</span>' );?>
 					</div>
 				</div>
 			</div>
