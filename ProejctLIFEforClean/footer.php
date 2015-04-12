@@ -1,4 +1,3 @@
-
 	<hr>
 
 	<!-- widget -->
@@ -56,29 +55,18 @@
 					?>
 					</ul>
 					<p class="creativecommons text-muted">
-						<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />
-						このブログは<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/">クリエイティブ・コモンズ</a>でライセンスされています。
+						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />
+						このサイトは <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際 ライセンスの下に提供されています。</a>
 					</p>
-					<p class="copyright text-muted">Copyright &copy; cubic-H 2015</p>
+					<p class="creativecommons text-muted">
+					このブログは Apache License, Version 2.0 のライセンスで配布されている成果物を含んでいます。
+					</p>
+					<p class="copyright text-muted">Copyright &copy; 1999-2015 anego All Rights Reserved.</p>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<!-- jQuery -->
-	<!--
-	<script src="js/jquery.js"></script>
-	 -->
-
-	<!-- Bootstrap Core JavaScript -->
-	<!--
-	<script src="js/bootstrap.min.js"></script>
-	 -->
-
-	<!-- Custom Theme JavaScript -->
-	<!--
-	<script src="js/clean-blog.min.js"></script>
-	 -->
 	<?php wp_footer(); ?>
 
 </body>
