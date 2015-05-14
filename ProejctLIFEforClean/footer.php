@@ -20,27 +20,30 @@
 						$user_info = get_userdata(1);
 						if ($user_info->twitter){
 							?>
-						<li><a href="https://twitter.com/<?php echo $user_info->twitter; ?>" target="_blank"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						<li><a href="https://twitter.com/<?php echo $user_info->twitter; ?>" target="_blank">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 							</span>
 						</a></li>
 							<?php
 						}
 						if ($user_info->facebook){
 							?>
-						<li><a href="https://www.facebook.com/<?php echo $user_info->facebook; ?>" target="_blank"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+						<li><a href="https://www.facebook.com/<?php echo $user_info->facebook; ?>" target="_blank">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 							</span>
 						</a></li>
 							<?php
 						}
 						if ($user_info->github){
 							?>
-						<li><a href="https://github.com/<?php echo $user_info->github; ?>" target="_blank"> <span class="fa-stack fa-lg"> <i
-									class="fa fa-circle fa-stack-2x"></i> <i
-									class="fa fa-github fa-stack-1x fa-inverse"></i>
+						<li><a href="https://github.com/<?php echo $user_info->github; ?>" target="_blank">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-github fa-stack-1x fa-inverse"></i>
 							</span>
 						</a></li>
 							<?php

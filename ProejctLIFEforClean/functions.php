@@ -113,6 +113,36 @@ function pagination($pages = '', $range = 2)
 	}
 }
 
+/**
+ * テーマカスタマイザー
+ */
+add_action( 'customize_register', 'themename_customize_register' );
+function themename_customize_register($wp_customize) {
+	// セクションを追加
+	$wp_customize->add_section( 'projectlife_clean_box_background_image', array(
+			'title'		=> 'ボックス背景画像',
+			'priority'	=> 100,
+	) );
+
+	// セクションの動作設定
+	$wp_customize->add_setting( 'projectlife_clean_box_background_image', array(
+			'default'		=> '',
+			'type'			=> 'option',
+			'capability'	=> 'edit_theme_options',
+	) );
+
+	// セクションのUIを作成する
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+			$wp_customize,
+			'box_background_image',
+			array(
+					'label'		=> '画像',
+					'section'	=> 'projectlife_clean_box_background_image',
+					'settings'	=> 'projectlife_clean_box_background_image',
+			)
+	) );
+
+}
 
 
 // wordpressのバージョンメタ情報削除
