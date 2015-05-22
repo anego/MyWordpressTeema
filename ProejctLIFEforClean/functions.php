@@ -120,7 +120,7 @@ add_action( 'customize_register', 'themename_customize_register' );
 function themename_customize_register($wp_customize) {
 	// セクションを追加
 	$wp_customize->add_section( 'projectlife_clean_box_background_image', array(
-			'title'		=> 'ボックス背景画像',
+			'title'		=> '背景画像',
 			'priority'	=> 100,
 	) );
 
