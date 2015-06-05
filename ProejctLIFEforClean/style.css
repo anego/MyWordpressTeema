@@ -51,7 +51,7 @@ hr.small {
   max-width: 100px;
   margin: 15px auto;
   border-width: 4px;
-  border-color: white;
+  /*border-color: white;*/
 }
 .navbar-custom {
   position: absolute;
@@ -76,7 +76,7 @@ hr.small {
     border-bottom: 1px solid transparent;
   }
   .navbar-custom .navbar-brand {
-    color: white;
+    /*color: white;*/
     padding: 20px;
   }
   .navbar-custom .navbar-brand:hover,
@@ -84,7 +84,7 @@ hr.small {
     color: rgba(255, 255, 255, 0.8);
   }
   .navbar-custom .nav li a {
-    color: white;
+    /*color: white;*/
     padding: 20px;
   }
   .navbar-custom .nav li a:hover,
@@ -153,7 +153,7 @@ hr.small {
 .intro-header .post-heading,
 .intro-header .page-heading {
   padding: 100px 0 50px;
-  color: white;
+  /*color: white;*/
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
@@ -207,7 +207,7 @@ hr.small {
   font-size: 20px;
 }
 .intro-header .post-heading .meta a {
-  color: white;
+  /*color: white;*/
 }
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
@@ -401,10 +401,10 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
-
+/*
 .intro-header{
 	background-image: url('img/bg_suburb_e.jpg');
-}
+}*/
 
 .site-heading h1 {
 	font-family:'Audiowide',cursive;

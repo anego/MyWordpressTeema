@@ -33,10 +33,10 @@
     <![endif]-->
 <?php wp_head(); ?>
 <?php
-if ( get_option('projectlife_clean_box_background_image') ) : // 背景画像が設定されているとき ?>
+if ( get_option('projectlife_clean_header_background_image') ) : // 背景画像が設定されているとき ?>
 <style type="text/css">
 .intro-header{
-	background-image: url('<?php echo esc_url(get_option('projectlife_clean_box_background_image')); ?>');
+	background-image: url('<?php echo esc_url(get_option('projectlife_clean_header_background_image')); ?>');
 }
 </style>
 <?php
@@ -44,8 +44,26 @@ else :
 	// 未設定のとき
 endif;
 ?>
+<?php $header_color = get_option( 'projectlife_clean_header_color'); ?>
+<style type="text/css">
+.site-heading hr.small {
+	border-color: <?php echo $header_color; ?>;
+}
+@media only screen and (min-width: 768px) {
+	.navbar-custom .navbar-brand,
+	.navbar-custom .nav li a {
+		color: <?php echo $header_color; ?>;
+	}
+}
+.intro-header .site-heading,
+.intro-header .post-heading,
+.intro-header .page-heading,
+.intro-header .post-heading .meta a,
+.site-heading {
+  color: <?php echo $header_color; ?>;
+}
+</style>
 </head>
-
 <body>
 
 	<!-- Navigation -->

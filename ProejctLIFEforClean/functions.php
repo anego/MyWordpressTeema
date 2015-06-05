@@ -119,14 +119,19 @@ function pagination($pages = '', $range = 2)
 add_action( 'customize_register', 'themename_customize_register' );
 function themename_customize_register($wp_customize) {
 	// セクションを追加
-	$wp_customize->add_section( 'projectlife_clean_box_background_image', array(
-			'title'		=> '背景画像',
+	$wp_customize->add_section( 'projectlife_clean_header', array(
+			'title'		=> __('ヘッダー','header'),
 			'priority'	=> 100,
 	) );
 
 	// セクションの動作設定
-	$wp_customize->add_setting( 'projectlife_clean_box_background_image', array(
+	$wp_customize->add_setting( 'projectlife_clean_header_background_image', array(
 			'default'		=> '',
+			'type'			=> 'option',
+			'capability'	=> 'edit_theme_options',
+	) );
+	$wp_customize->add_setting( 'projectlife_clean_header_color', array(
+			'default'		=> '#666666',
 			'type'			=> 'option',
 			'capability'	=> 'edit_theme_options',
 	) );
@@ -134,17 +139,23 @@ function themename_customize_register($wp_customize) {
 	// セクションのUIを作成する
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 			$wp_customize,
-			'box_background_image',
+			'header_background_image',
 			array(
-					'label'		=> '画像',
-					'section'	=> 'projectlife_clean_box_background_image',
-					'settings'	=> 'projectlife_clean_box_background_image',
+					'label'		=> __('背景画像','header'),
+					'section'	=> 'projectlife_clean_header',
+					'settings'	=> 'projectlife_clean_header_background_image',
 			)
 	) );
-
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_color',
+			array(
+					'label' => __('文字色','header'),
+					'section' => 'projectlife_clean_header',
+					'settings' => 'projectlife_clean_header_color'
+			)
+	) );
 }
-
-
 // wordpressのバージョンメタ情報削除
 remove_action('wp_head', 'wp_generator');
 
@@ -163,8 +174,8 @@ add_action( 'wp_enqueue_scripts', 'projectlife_styles');
 
 // wp-config/theme/[子テーマ名]/functions.php
 function projectlife_scripts() {
-	wp_enqueue_script( 'projectlife-clean-script', get_template_directory_uri() . '/js/clean-blog.min.js', array(), '20150314', true );
-	wp_enqueue_script( 'projectlife-script', get_template_directory_uri() . '/js/functions.js', array(), '20150314', true );
+	wp_enqueue_script( 'projectlife-clean-script', get_template_directory_uri() . '/js/clean-blog.min.js', array(), '20150528', true );
+	wp_enqueue_script( 'projectlife-script', get_template_directory_uri() . '/js/functions.js', array(), '20150528', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'projectlife_scripts');
