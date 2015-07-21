@@ -14,7 +14,7 @@ if(is_home()):
 	endif;
 elseif(is_single()):
 	$content_summary = strip_tags($post->post_content);
-	$content_summary = ereg_replace("(rn|r|n)", "", $content_summary);
+	$content_summary = preg_replace("/(?:\n|\r|\r\n)/", "", $content_summary);
 	$content_summary = mb_substr($content_summary, 0, 50). "...";
 	echo $content_summary;
 else:
