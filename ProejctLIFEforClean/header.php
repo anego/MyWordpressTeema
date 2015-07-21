@@ -4,11 +4,22 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php if ( $post->my_description ): //meta descriptionの設定 ?>
-	<meta name="description" content="<?php echo esc_attr( $post->my_description ); ?>" />
-<?php else: ?>
-	<meta name="description" content="Clean blog" />
-<?php endif; ?>
+<meta name="description" content="<?php
+if(is_home()):
+	// トップページ用
+	if ( $post->my_description ):
+		echo esc_attr( $post->my_description );
+	else:
+		echo bloginfo('description');
+	endif;
+elseif(is_single()):
+	$content_summary = strip_tags($post->post_content);
+	$content_summary = ereg_replace("(rn|r|n)", "", $content_summary);
+	$content_summary = mb_substr($content_summary, 0, 50). "...";
+	echo $content_summary;
+else:
+	?><?php bloginfo('description'); ?><?php
+endif; ?>">
 <?php if ( $post->my_keywords ): //meta keywordsの設定 ?>
 	<meta name="keywords" content="<?php echo esc_attr( $post->my_keywords ); ?>" />
 <?php endif; ?>
