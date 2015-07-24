@@ -13,10 +13,18 @@ if(is_home()):
 		echo bloginfo('description');
 	endif;
 elseif(is_single()):
+	// 投稿ページ
 	$content_summary = strip_tags($post->post_content);
 	$content_summary = preg_replace("/(?:\n|\r|\r\n)/", "", $content_summary);
 	$content_summary = mb_substr($content_summary, 0, 50). "...";
 	echo $content_summary;
+elseif(is_category()):
+	// カテゴリーページ
+	$cat = get_the_category();
+	echo "Category : " . $cat[0]->cat_name;
+elseif(is_archive()):
+	// アーカイブページ
+	echo "Archives : " . get_the_archive_title();
 else:
 	?><?php bloginfo('description'); ?><?php
 endif; ?>">
