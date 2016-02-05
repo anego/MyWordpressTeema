@@ -1,0 +1,15 @@
+CACHE MANIFEST
+
+#version 1.0 10-08-2015
+
+CACHE:
+/wp-content/themes/ProejctLIFEforClean/js/bootstrap.min.js
+/wp-content/themes/ProejctLIFEforClean/js/clean-blog.min.js
+/wp-content/themes/ProejctLIFEforClean/css/bootstrap.min.css
+/wp-content/themes/ProejctLIFEforClean/style.css
+
+
+
+
+NETWORK:
+*

@@ -55,6 +55,16 @@
 						</li>
 							<?php
 						}
+						if ($user_info->tumblr){
+							?>
+						<li><a href="https://www.tumblr.com/blog/<?php echo $user_info->tumblr; ?>" target="_blank">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-tumblr fa-stack-1x fa-inverse"></i>
+							</span>
+						</a></li>
+							<?php
+						}
 					?>
 					</ul>
 					<p class="creativecommons text-muted">

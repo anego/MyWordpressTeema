@@ -16,6 +16,7 @@ function my_user_meta($x)
 	$x['facebook'] = 'facebook';
 	$x['github'] = 'github';
 	$x['pixiv'] = 'pixiv';
+	$x['tumblr'] = 'tumblr';
 
 	return $x;
 }
